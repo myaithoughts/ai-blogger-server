@@ -23,7 +23,6 @@ app.post("/ai", async (req, res) => {
         ]
       })
     });
-
     const data = await response.json();
     res.json({ reply: data.choices[0].message.content });
   } catch (e) {
@@ -34,7 +33,7 @@ app.post("/ai", async (req, res) => {
 
 // Optional GET route for testing
 app.get("/", (req, res) => {
-  res.send("AI server is running! Use /ai for POST requests.");
+  res.send("AI server is running! Use /ai endpoint for POST requests.");
 });
 
 app.listen(3000, () => console.log("Server running on port 3000"));
